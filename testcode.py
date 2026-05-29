@@ -1,5 +1,8 @@
 from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+from pprint import pprint
 
 if __name__ == "__main__":
-    olmo = AutoModelForCausalLM.from_pretrained("allenai/Olmo-3.1-32B-Instruct")
-    print(olmo)
+
+
+    pprint(torch.hub.list("chenyaofo/pytorch-cifar-models", force_reload=True))
