@@ -71,7 +71,7 @@ except ImportError:
     wandb = None
 
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "3, 4, 5, 6"
+os.environ["CUDA_VISIBLE_DEVICES"] = "6"
 # ─────────────────────────────────────────────────────────────
 # Utility Functions
 # ─────────────────────────────────────────────────────────────

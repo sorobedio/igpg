@@ -74,6 +74,7 @@ train_tiny_subset-2:
   - facebook/MobileLLM-600M
   - Qwen/Qwen2.5-0.5B-Instruct
   - google/gemma-3-270m-it
+  - allenai/Olmo-3.1-32B-Instruct
 
 #
 #train_tiny_subset-2:
