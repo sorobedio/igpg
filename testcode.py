@@ -8,7 +8,7 @@ if __name__ == "__main__":
     # pprint(torch.hub.list("chenyaofo/pytorch-cifar-models", force_reload=True))
     olmo = AutoModelForCausalLM.from_pretrained("allenai/OLMo-2-0425-1B")
     print(olmo)
-    std = model.state_dict()
+    std = olmo.state_dict()
     ws =[]
     for key in std:
         vas = std[key].reshape(1, -1).cpu()
