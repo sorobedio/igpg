@@ -1,8 +1,12 @@
 import argparse
+import os
 import torch
 import torch.nn as nn
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
+
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "7"
 
 
 CIFAR_CONFIGS = {

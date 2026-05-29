@@ -1,5 +1,5 @@
 
 
-python eval_cifar.py --dataset cifar10 --model cifar10_resnet20
+python evaluate_cifar.py --dataset cifar10 --model cifar10_resnet20
 python eval_cifar.py --dataset cifar100 --model cifar100_resnet20
 
