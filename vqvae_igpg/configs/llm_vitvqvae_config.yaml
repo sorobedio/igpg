@@ -1,0 +1,73 @@
+model:
+  base_learning_rate: 4.5e-06
+  target: vqvae_igpg.models.vitgan.GumbelVQNoDisc
+  params:
+    learning_rate: 1.5e-4
+    channel_last: False
+    embed_dim: 1024
+    codebook_dim: 1024
+    enc_type: 'linear'
+    z_channels: 48
+    e_channels: 64
+    z_height: 64
+    n_embed: 1024
+    #    ckpt_path: 'checkpoints/stage1/base_smollm_ae_16_down.ckpt'
+    #'checkpoints/stage1/base_smollm_ae_large.ckpt'
+    input_key: 'weight'
+#    monitor: val/rec_loss
+    temperature_scheduler_config:
+      target: vqvae_igpg.lr_scheduler.LambdaWarmUpCosineScheduler
+      params:
+        warm_up_steps: 0
+        max_decay_steps: 1000001
+        lr_start: 0.95
+        lr_max: 0.95
+        lr_min: 1.0e-5
+
+    enconfig:
+      length: 49152
+      n_layers: 6 #12
+      chunk_size: 256
+      embed_dim: 1024
+      latent_dim: 256 #700 #250
+      n_heads: 16
+      rope_base: 10000
+      #      dtype: torch.float32
+      conv: False
+      flatten: True
+    deconfig:
+      length: 49152
+      n_layers: 6 #3
+      chunk_size: 256
+      embed_dim: 1024
+      latent_dim: 256 #700 #250
+      n_heads: 16
+      rope_base: 10000
+      #      dtype: torch.float32
+      conv: False
+      flatten: True
+    lossconfig:
+      target: vqvae_igpg.modules.losses.vqperceptual.VQLPIPSNoDiscriminator
+      params:
+        disc_input_size: 128
+        is_reshape: True
+        disc_in_channels: 3
+        codebook_weight: 1.0
+        n_classes: 1024
+#    lossconfig:
+#      target: vqvae_igpg.modules.losses.losses.VQLoss
+#      params:
+#        codebook_weight: 1.0
+
+
+data:
+  target: zooloaders.vqvae_loader.ZooDataModule
+  params:
+    data_dir: "../Datasets"
+    data_root: "../Datasets/data/"
+    batch_size: 128
+    num_workers: 8
+    scale: 0.1
+    dataset: "joint"
+    topk: null
+    normalize: False

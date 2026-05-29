@@ -1,0 +1,69 @@
+model:
+  base_learning_rate: 4.5e-06
+  target: vqvae_igpg.models.first_stage_vqvae_model.GumbelVQNoDisc
+  params:
+    learning_rate: 1.0e-4
+    embed_dim: 256
+    n_embed:  256 #8192
+#    ckpt_path: "autocheckpoints/best_model_256_ln_mlp.pt"
+#    monitor: val/rec_loss
+    temperature_scheduler_config:
+      target: vqvae_igpg.lr_scheduler.LambdaWarmUpCosineScheduler
+      params:
+        warm_up_steps: 0
+        max_decay_steps: 1000001
+        lr_start: 0.95
+        lr_max: 0.95
+        lr_min: 1.0e-5
+    ddconfig:
+      double_z: False
+      tanh_out: False
+      z_channels: 16 #256
+      resolution: 192 #256
+      in_channels: 3
+      my_channels: 12
+      out_ch: 3
+      ch: 128
+      ch_mult: [ 1,1, 2, 2, 2]  #num_down = len(ch_mult)-1
+      num_res_blocks: 2
+      attn_resolutions: [  ]
+      dropout: 0.0
+      in_dim: 9216
+      fdim: 9216
+    lossconfig:
+      target: vqvae_igpg.modules.losses.losses.VQLoss
+      params:
+        codebook_weight: 1.0
+
+
+data:
+  target: zooloaders.ldm_zooloader.ZooDataModule
+  params:
+    batch_size: 100
+    num_workers: 16
+    zoo_root:  '../zoodatasets_train_tiny'
+    zoo_split: "train_tiny"
+    length: 110592
+    resolution: 192
+    to_image: True
+    in_channel: 3
+#    resolution:
+    topk: null
+    scale: 0.1
+
+#    data_dir = '../zoodatasets_train_tiny'
+#    file_name = 'modelzoos/zoo_config.simple_config.yaml'
+#    target_set = "train_tiny"
+
+
+#data:
+#  target: zooloaders.vqvae_loader.ZooDataModule
+#  params:
+#    data_dir: "../Datasets"
+#    data_root: "../Datasets/data/"
+#    batch_size: 128
+#    num_workers: 8
+#    scale: 0.1
+#    dataset: "joint"
+#    topk: null
+#    normalize: False

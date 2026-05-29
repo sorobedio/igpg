@@ -1,0 +1,288 @@
+5B:
+  bos_token_id: 151643
+  eos_token_id: 151643
+  hidden_act: silu
+  hidden_size: 1536
+  intermediate_size: 8960
+  layer_types:
+  - full_attention
+  - full_attention
+  max_position_embeddings: 131072
+  max_window_layers: 21
+  num_attention_heads: 12
+  num_hidden_layers: 28
+  num_key_value_heads: 2
+  rms_norm_eps: 1.0e-06
+  rope_theta: 10000
+  vocab_size: 151936
+
+facebook/MobileLLM-1.5B:
+  eos_token_id: 2
+  head_dim: 64
+  hidden_act: silu
+  hidden_size: 1600
+  intermediate_size: 4352
+  max_position_embeddings: 4096
+  num_attention_heads: 25
+  num_hidden_layers: 54
+  num_key_value_heads: 5
+  rms_norm_eps: 1.0e-05
+  rope_theta: 10000.0
+  torch_dtype: bfloat16
+  vocab_size: 32000
+  description: "this is MobileLLM-1.5B: a base model for general tasks"
+
+facebook/MobileLLM-1B:
+  eos_token_id: 2
+  head_dim: 64
+  hidden_act: silu
+  hidden_size: 1280
+  intermediate_size: 3584
+  max_position_embeddings: 2048
+  num_hidden_layers: 54
+  num_key_value_heads: 5
+  rms_norm_eps: 1.0e-05
+  rope_theta: 10000.0
+  torch_dtype: float16
+  vocab_size: 32000
+  description: "this is MobileLLM-1B: a base model for general tasks"
+
+HuggingFaceTB/SmolLM-1.7B:
+  head_dim: 64
+  hidden_act: silu
+  hidden_size: 2048
+  intermediate_size: 8192
+  max_position_embeddings: 2048
+  num_attention_heads: 32
+  num_hidden_layers: 24
+  num_key_value_heads: 32
+  rms_norm_eps: 1.0e-05
+  rope_theta: 10000.0
+  vocab_size: 49152
+  description: "this is SmolLM-1.7B: a base model for general tasks"
+
+HuggingFaceTB/SmolLM-1.7B-Instruct:
+  eos_token_id: 2
+  head_dim: 64
+  hidden_act: silu
+  hidden_size: 2048
+  intermediate_size: 8192
+  max_position_embeddings: 2048
+  num_attention_heads: 32
+  num_hidden_layers: 24
+  num_key_value_heads: 32
+  pad_token_id: 2
+  rms_norm_eps: 1.0e-05
+  rope_theta: 10000.0
+  vocab_size: 49152
+  description: "this is SmolLM-1.7B-Instruct: an instruct model for general tasks"
+
+HuggingFaceTB/SmolLM2-1.7B:
+  head_dim: 64
+  hidden_act: silu
+  hidden_size: 2048
+  intermediate_size: 8192
+  max_position_embeddings: 8192
+  model_type: llama
+  num_attention_heads: 32
+  num_hidden_layers: 24
+  num_key_value_heads: 32
+  rms_norm_eps: 1.0e-05
+  rope_theta: 130000
+  vocab_size: 49152
+  description: "this is SmolLM2-1.7B: a base model for general tasks"
+
+HuggingFaceTB/SmolLM2-1.7B-Instruct:
+  eos_token_id: 2
+  head_dim: 64
+  hidden_act: silu
+  hidden_size: 2048
+  intermediate_size: 8192
+  max_position_embeddings: 8192
+  num_attention_heads: 32
+  num_hidden_layers: 24
+  num_key_value_heads: 32
+  pad_token_id: 2
+  rms_norm_eps: 1.0e-05
+  rope_theta: 130000
+  vocab_size: 49152
+  description: "this is SmolLM2-1.7B-Instruct: an instruct model for general tasks"
+
+Qwen/Qwen2.5-0.5B-Instruct:
+  bos_token_id: 151643
+  eos_token_id: 151645
+  hidden_act: silu
+  hidden_size: 896
+  intermediate_size: 4864
+  layer_types:
+  - full_attention
+  - full_attention
+  max_position_embeddings: 32768
+  max_window_layers: 21
+  num_attention_heads: 14
+  num_hidden_layers: 24
+  num_key_value_heads: 2
+  rms_norm_eps: 1.0e-06
+  rope_theta: 1000000.0
+  torch_dtype: bfloat16
+  vocab_size: 151936
+  description: "this is Qwen2.5-0.5B-Instruct: an instruct model for general tasks"
+
+Qwen/Qwen2.5-1.5B:
+  bos_token_id: 151643
+  eos_token_id: 151643
+  hidden_act: silu
+  hidden_size: 1536
+  intermediate_size: 8960
+  layer_types:
+  - full_attention
+  - full_attention
+  max_position_embeddings: 131072
+  max_window_layers: 28
+  num_attention_heads: 12
+  num_hidden_layers: 28
+  num_key_value_heads: 2
+  rms_norm_eps: 1.0e-06
+  rope_theta: 1000000.0
+  torch_dtype: bfloat16
+  vocab_size: 151936
+  description: "this is Qwen2.5-1.5B: a base model for general tasks"
+
+Qwen/Qwen2.5-Math-1.5B:
+  bos_token_id: 151643
+  eos_token_id: 151643
+  hidden_act: silu
+  hidden_size: 1536
+  intermediate_size: 8960
+  layer_types:
+  - full_attention
+  - full_attention
+  max_position_embeddings: 4096
+  max_window_layers: 21
+  num_attention_heads: 12
+  num_hidden_layers: 28
+  num_key_value_heads: 2
+  rms_norm_eps: 1.0e-06
+  rope_theta: 10000
+  vocab_size: 151936
+  description: "this is Qwen2.5-Math-1.5B: a base model for math tasks"
+
+Qwen/Qwen2.5-Math-1.5B-Instruct:
+  bos_token_id: 151643
+  eos_token_id: 151645
+  hidden_act: silu
+  hidden_size: 1536
+  intermediate_size: 8960
+  layer_types:
+  - full_attention
+  - full_attention
+  max_position_embeddings: 4096
+  max_window_layers: 21
+  num_attention_heads: 12
+  num_hidden_layers: 28
+  num_key_value_heads: 2
+  rms_norm_eps: 1.0e-06
+  rope_theta: 10000.0
+  torch_dtype: bfloat16
+  vocab_size: 151936
+  description: "this is Qwen2.5-Math-1.5B-Instruct: an instruct model for math tasks"
+
+Qwen/Qwen3-1.7B:
+  bos_token_id: 151643
+  eos_token_id: 151645
+  head_dim: 128
+  hidden_act: silu
+  hidden_size: 2048
+  intermediate_size: 6144
+  layer_types:
+  - full_attention
+  - full_attention
+  max_position_embeddings: 40960
+  max_window_layers: 28
+  num_attention_heads: 16
+  num_hidden_layers: 28
+  num_key_value_heads: 8
+  rms_norm_eps: 1.0e-06
+  rope_theta: 1000000
+  torch_dtype: bfloat16
+  vocab_size: 151936
+  description: "this is Qwen3-1.7B: a reasoning model for general tasks"
+`
+deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B:
+  bos_token_id: 151643
+  eos_token_id: 151643
+  hidden_act: silu
+  hidden_size: 1536
+  intermediate_size: 8960
+  layer_types:
+  - full_attention
+  - full_attention
+  max_position_embeddings: 131072
+  max_window_layers: 21
+  num_attention_heads: 12
+  num_hidden_layers: 28
+  num_key_value_heads: 2
+  rms_norm_eps: 1.0e-06
+  rope_theta: 10000
+  vocab_size: 151936
+  description: "this is DeepSeek-R1-Distill-Qwen-1.5B: a reasoning model for general tasks"
+
+microsoft/phi-1:
+  hidden_act: gelu_new
+  hidden_size: 2048
+  intermediate_size: 8192
+  layer_norm_eps: 1.0e-05
+  max_position_embeddings: 2048
+  num_attention_heads: 32
+  num_hidden_layers: 24
+  num_key_value_heads: 32
+  partial_rotary_factor: 0.5
+  rope_theta: 10000.0
+  torch_dtype: float32
+  vocab_size: 51200
+  description: "this is phi-1: a base model for general tasks"
+
+microsoft/phi-1_5:
+  hidden_act: gelu_new
+  hidden_size: 2048
+  intermediate_size: 8192
+  layer_norm_eps: 1.0e-05
+  max_position_embeddings: 2048
+  num_attention_heads: 32
+  num_hidden_layers: 24
+  num_key_value_heads: 32
+  partial_rotary_factor: 0.5
+  rope_theta: 10000.0
+  vocab_size: 51200
+  description: "this is phi-1_5: a base model for general tasks"
+
+google/gemma-3-1b-it:
+  _sliding_window_pattern: 6
+  attention_bias: false
+  attention_dropout: 0.0
+  attn_logit_softcapping: null
+  bos_token_id: 2
+  cache_implementation: hybrid
+  eos_token_id:
+  - 1
+  - 106
+  final_logit_softcapping: null
+  head_dim: 256
+  hidden_activation: gelu_pytorch_tanh
+  hidden_size: 1152
+  intermediate_size: 6912
+  max_position_embeddings: 32768
+  model_type: gemma3_text
+  num_attention_heads: 4
+  num_hidden_layers: 26
+  num_key_value_heads: 1
+  pad_token_id: 0
+  query_pre_attn_scalar: 256
+  rms_norm_eps: 1.0e-06
+  rope_local_base_freq: 10000
+  rope_scaling: null
+  rope_theta: 1000000
+  sliding_window: 512
+  use_cache: true
+  vocab_size: 262144
+  description: 'this is SmolLM-135M-Instruct: an instruct model for general tasks'

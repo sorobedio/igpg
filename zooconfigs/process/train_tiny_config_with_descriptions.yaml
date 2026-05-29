@@ -1,0 +1,290 @@
+HuggingFaceTB/SmolLM-135M:
+  attention_bias: false
+  bos_token_id: 0
+  eos_token_id: 0
+  head_dim: 64
+  hidden_size: 576
+  initializer_range: 0.02
+  intermediate_size: 1536
+  max_position_embeddings: 2048
+  mlp_bias: false
+  model_type: llama
+  num_attention_heads: 9
+  num_hidden_layers: 30
+  num_key_value_heads: 3
+  pad_token_id: null
+  pretraining_tp: 1
+  rms_norm_eps: 1.0e-05
+  rope_theta: 10000.0
+  tie_word_embeddings: true
+  vocab_size: 49152
+  description: 'this is SmolLM-135M: a base model for general tasks'
+HuggingFaceTB/SmolLM-135M-Instruct:
+  attention_bias: false
+  bos_token_id: 1
+  eos_token_id: 2
+  head_dim: 64
+  hidden_size: 576
+  initializer_range: 0.02
+  intermediate_size: 1536
+  max_position_embeddings: 2048
+  mlp_bias: false
+  model_type: llama
+  num_attention_heads: 9
+  num_hidden_layers: 30
+  num_key_value_heads: 3
+  pad_token_id: 2
+  pretraining_tp: 1
+  rms_norm_eps: 1.0e-05
+  rope_theta: 10000.0
+  tie_word_embeddings: true
+  vocab_size: 49152
+  description: 'this is SmolLM-135M-Instruct: an instruct model for general tasks'
+HuggingFaceTB/SmolLM-360M:
+  attention_bias: false
+  bos_token_id: 0
+  eos_token_id: 0
+  head_dim: 64
+  hidden_size: 960
+  initializer_range: 0.02
+  intermediate_size: 2560
+  max_position_embeddings: 2048
+  mlp_bias: false
+  model_type: llama
+  num_attention_heads: 15
+  num_hidden_layers: 32
+  num_key_value_heads: 5
+  pad_token_id: null
+  pretraining_tp: 1
+  rms_norm_eps: 1.0e-05
+  rope_theta: 10000.0
+  tie_word_embeddings: true
+  vocab_size: 49152
+  description: 'this is SmolLM-360M: a base model for general tasks'
+HuggingFaceTB/SmolLM-360M-Instruct:
+  attention_bias: false
+  bos_token_id: 1
+  eos_token_id: 2
+  head_dim: 64
+  hidden_size: 960
+  initializer_range: 0.02
+  intermediate_size: 2560
+  max_position_embeddings: 2048
+  mlp_bias: false
+  model_type: llama
+  num_attention_heads: 15
+  num_hidden_layers: 32
+  num_key_value_heads: 5
+  pad_token_id: 2
+  pretraining_tp: 1
+  rms_norm_eps: 1.0e-05
+  rope_theta: 10000.0
+  tie_word_embeddings: true
+  vocab_size: 49152
+  description: 'this is SmolLM-360M-Instruct: an instruct model for general tasks'
+HuggingFaceTB/SmolLM2-135M:
+  attention_bias: false
+  bos_token_id: 0
+  eos_token_id: 0
+  head_dim: 64
+  hidden_size: 576
+  initializer_range: 0.041666666666666664
+  intermediate_size: 1536
+  is_llama_config: true
+  max_position_embeddings: 8192
+  mlp_bias: false
+  model_type: llama
+  num_attention_heads: 9
+  num_hidden_layers: 30
+  num_key_value_heads: 3
+  pad_token_id: null
+  pretraining_tp: 1
+  rms_norm_eps: 1.0e-05
+  rope_interleaved: false
+  rope_theta: 100000
+  tie_word_embeddings: true
+  vocab_size: 49152
+  description: 'this is SmolLM2-135M: a base model for general tasks'
+HuggingFaceTB/SmolLM2-135M-Instruct:
+  attention_bias: false
+  bos_token_id: 1
+  eos_token_id: 2
+  head_dim: 64
+  hidden_size: 576
+  initializer_range: 0.041666666666666664
+  intermediate_size: 1536
+  is_llama_config: true
+  max_position_embeddings: 8192
+  mlp_bias: false
+  model_type: llama
+  num_attention_heads: 9
+  num_hidden_layers: 30
+  num_key_value_heads: 3
+  pad_token_id: 2
+  pretraining_tp: 1
+  rms_norm_eps: 1.0e-05
+  rope_interleaved: false
+  rope_theta: 100000
+  tie_word_embeddings: true
+  vocab_size: 49152
+  description: 'this is SmolLM2-135M-Instruct: an instruct model for general tasks'
+HuggingFaceTB/SmolLM2-360M:
+  attention_bias: false
+  bos_token_id: 0
+  eos_token_id: 0
+  head_dim: 64
+  hidden_size: 960
+  initializer_range: 0.02
+  intermediate_size: 2560
+  is_llama_config: true
+  max_position_embeddings: 8192
+  mlp_bias: false
+  model_type: llama
+  num_attention_heads: 15
+  num_hidden_layers: 32
+  num_key_value_heads: 5
+  pad_token_id: null
+  pretraining_tp: 1
+  rms_norm_eps: 1.0e-05
+  rope_interleaved: false
+  rope_theta: 100000
+  tie_word_embeddings: true
+  vocab_size: 49152
+  description: 'this is SmolLM2-360M: a base model for general tasks'
+HuggingFaceTB/SmolLM2-360M-Instruct:
+  attention_bias: false
+  bos_token_id: 1
+  eos_token_id: 2
+  head_dim: 64
+  hidden_size: 960
+  initializer_range: 0.02
+  intermediate_size: 2560
+  is_llama_config: true
+  max_position_embeddings: 8192
+  mlp_bias: false
+  model_type: llama
+  num_attention_heads: 15
+  num_hidden_layers: 32
+  num_key_value_heads: 5
+  pad_token_id: 2
+  pretraining_tp: 1
+  rms_norm_eps: 1.0e-05
+  rope_interleaved: false
+  rope_theta: 100000
+  tie_word_embeddings: true
+  vocab_size: 49152
+  description: 'this is SmolLM2-360M-Instruct: an instruct model for general tasks'
+Qwen/Qwen2.5-0.5B:
+  bos_token_id: 151643
+  eos_token_id: 151643
+  hidden_size: 896
+  initializer_range: 0.02
+  intermediate_size: 4864
+  layer_types:
+  - full_attention
+  max_position_embeddings: 32768
+  max_window_layers: 24
+  model_type: qwen2
+  num_attention_heads: 14
+  num_hidden_layers: 24
+  num_key_value_heads: 2
+  pad_token_id: null
+  rms_norm_eps: 1.0e-06
+  rope_theta: 1000000.0
+  sliding_window: null
+  tie_word_embeddings: true
+  use_mrope: false
+  use_sliding_window: false
+  vocab_size: 151936
+  description: 'this is Qwen2.5-0.5B: a base model for general tasks'
+Qwen/Qwen2.5-0.5B-Instruct:
+  bos_token_id: 151643
+  eos_token_id: 151645
+  hidden_size: 896
+  initializer_range: 0.02
+  intermediate_size: 4864
+  layer_types:
+  - full_attention
+  max_position_embeddings: 32768
+  max_window_layers: 21
+  model_type: qwen2
+  num_attention_heads: 14
+  num_hidden_layers: 24
+  num_key_value_heads: 2
+  pad_token_id: null
+  rms_norm_eps: 1.0e-06
+  rope_theta: 1000000.0
+  sliding_window: null
+  tie_word_embeddings: true
+  use_sliding_window: false
+  vocab_size: 151936
+  description: 'this is Qwen2.5-0.5B-Instruct: an instruct model for general tasks'
+facebook/MobileLLM-125M:
+  attention_bias: false
+  bos_token_id: 1
+  eos_token_id: 2
+  head_dim: 64
+  hidden_size: 576
+  initializer_range: 0.02
+  intermediate_size: 1536
+  layer_sharing: false
+  max_position_embeddings: 2048
+  mlp_bias: false
+  model_type: mobilellm
+  num_attention_heads: 9
+  num_hidden_layers: 30
+  num_key_value_heads: 3
+  pad_token_id: null
+  pretraining_tp: 1
+  rms_norm_eps: 1.0e-05
+  rope_theta: 10000.0
+  share_embedding: true
+  tie_word_embeddings: false
+  vocab_size: 32000
+  description: 'this is MobileLLM-125M: a base model for general tasks'
+facebook/MobileLLM-350M:
+  attention_bias: false
+  bos_token_id: 1
+  eos_token_id: 2
+  head_dim: 64
+  hidden_size: 960
+  initializer_range: 0.02
+  intermediate_size: 2560
+  layer_sharing: false
+  max_position_embeddings: 2048
+  mlp_bias: false
+  model_type: mobilellm
+  num_attention_heads: 15
+  num_hidden_layers: 32
+  num_key_value_heads: 5
+  pad_token_id: null
+  pretraining_tp: 1
+  rms_norm_eps: 1.0e-05
+  rope_theta: 10000.0
+  share_embedding: true
+  tie_word_embeddings: false
+  vocab_size: 32000
+  description: 'this is MobileLLM-350M: a base model for general tasks'
+facebook/MobileLLM-600M:
+  attention_bias: false
+  bos_token_id: 1
+  eos_token_id: 2
+  head_dim: 64
+  hidden_size: 1152
+  initializer_range: 0.02
+  intermediate_size: 3072
+  layer_sharing: false
+  max_position_embeddings: 2048
+  mlp_bias: false
+  model_type: mobilellm
+  num_attention_heads: 18
+  num_hidden_layers: 40
+  num_key_value_heads: 6
+  pad_token_id: null
+  pretraining_tp: 1
+  rms_norm_eps: 1.0e-05
+  rope_theta: 10000.0
+  share_embedding: true
+  tie_word_embeddings: false
+  vocab_size: 32000
+  description: 'this is MobileLLM-600M: a base model for general tasks'

@@ -1,0 +1,59 @@
+model:
+  base_learning_rate: 4.5e-06
+  target: vqvae_igpg.models.first_stage_vqvae_model.GumbelVQNoDisc
+  params:
+    learning_rate: 7.5e-5
+    embed_dim: 128
+    n_embed: 512
+    ckpt_path: "checkpoints/first_stage_base_init_vqvae_.pth"
+#    monitor: val/rec_loss
+    temperature_scheduler_config:
+      target: vqvae_igpg.lr_scheduler.LambdaWarmUpCosineScheduler
+      params:
+        warm_up_steps: 0
+        max_decay_steps: 10000001
+        lr_start: 1.0
+        lr_max: 1.0
+        lr_min: 1.0e-5
+    ddconfig:
+      double_z: False
+      tanh_out: False
+      z_channels: 128
+      resolution: 128
+      in_channels: 3
+      my_channels: 3
+      out_ch: 3
+      ch: 128
+      ch_mult: [1,1, 2, 4]  #num_down = len(ch_mult)-1
+      num_res_blocks: 2
+      attn_resolutions: [ 8]
+      dropout: 0.0
+      in_dim: 16384
+      fdim: 16384
+    lossconfig:
+      target: vqvae_igpg.modules.losses.losses.VQLoss
+      params:
+        codebook_weight: 1.0
+#    softconfig:
+#      target: fff
+#      params:
+#        n_e: 512
+#        e_dim: 16
+#        entropy_loss_ratio: 0.01,
+#        tau: 0.07,
+#        num_codebooks: 1,
+#        l2_norm: False,
+#        show_usage: False
+
+
+data:
+  target: zooloaders.vqvae_loader.ZooDataModule
+  params:
+    data_dir: "../Datasets"
+    data_root: "../Datasets/data/"
+    batch_size: 128
+    num_workers: 8
+    scale: 0.1
+    dataset: "joint"
+    topk: null
+    normalize: False

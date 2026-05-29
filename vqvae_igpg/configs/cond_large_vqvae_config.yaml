@@ -1,0 +1,96 @@
+model:
+  base_learning_rate: 4.5e-06
+  target: vqvae_igpg.models.condvqvae_models.GumbelVQNoDisc
+  params:
+    learning_rate: 4.50e-5
+    embed_dim: 16
+    n_embed:  16384 #8192
+#    ckpt_path: "tiny_autocheckpoints/model_tiny_base_192_.pt"
+#    monitor: val/rec_loss
+    temperature_scheduler_config:
+      target: vqvae_igpg.lr_scheduler.LambdaWarmUpCosineScheduler
+      params:
+        warm_up_steps: 0
+        max_decay_steps: 1000001
+        lr_start: 0.95
+        lr_max: 0.95
+        lr_min: 2.50e-4
+    ddconfig:
+      cch: 4 # condition in channel
+      double_z: False
+      tanh_out: False
+      z_channels: 16 #256
+      resolution: 256 #256
+      in_channels: 3
+      my_channels: 12
+      out_ch: 3
+      ch: 128
+      ch_mult: [ 1,1, 2,2, 4]   # [ 1,1, 1, 2,2]#num_down = len(ch_mult)-1
+      num_res_blocks: 8
+      attn_resolutions: [16]
+      dropout: 0.0
+      in_dim: 16384
+      fdim: 16384
+      ln_proj: False
+      relu_out: False
+
+    lossconfig:
+      target: vqvae_igpg.modules.losses.vqperceptual.VQLPIPSNoDiscriminator
+      params:
+        disc_input_size: 64
+        is_reshape: True
+        disc_in_channels: 3
+        codebook_weight: 1.0
+        n_classes: 16384
+
+#    lossconfig:
+#      target: vqvae_igpg.modules.losses.losses.VQLoss
+#      params:
+#        codebook_weight: 1.0
+#        n_classes: 1024
+
+    cond_stage_config:
+      target: vqvae_igpg.modules.conditionmodules.Conditioner
+      params:
+        hf_method: "google-t5/t5-small"
+        hf_max_length: 512
+        arch_emb_dim: 1024
+        layer_emb_dim: 512
+        chunk_emb_dim: 32
+        output_emb_dim: 1024
+        max_num_chunks: 3961 #1231 #11079 #1232  #42730 #499921
+        to_img: True
+        out_ch: 4
+        out_size: 16
+
+data:
+  target: zooloaders.ldm_zooloader.ZooDataModule
+  params:
+    batch_size: 100
+    num_workers: 16
+    zoo_root: '../zoodatasets_train_tiny_subset_64_v2'
+    zoo_split: "train_tiny_subset-2"
+    length: 16608
+    resolution: 256
+    to_image: True
+    in_channel: 3
+#    resolution:
+    topk: null
+    scale: 1.0
+
+#    data_dir = '../zoodatasets_train_tiny'
+#    file_name = 'modelzoos/zoo_config.simple_config.yaml'
+#    target_set = "train_tiny"
+
+
+#data:
+#  target: zooloaders.vqvae_loader.ZooDataModule
+#  params:
+#    data_dir: "../Datasets"
+#    data_root: "../Datasets/data/"
+#    batch_size: 128
+#    num_workers: 8
+#    scale: 0.1
+#    dataset: "joint" 3961==256x256x3
+#    topk: null
+#    normalize: False
